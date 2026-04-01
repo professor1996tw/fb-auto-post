@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --fb-blue: #1877F2;
+  --fb-blue-dark: #166FE5;
+  --fb-blue-light: #E7F3FF;
+}
+
+/* 粉專卡片動畫 */
+@layer components {
+  .page-card {
+    @apply bg-white rounded-2xl border-2 border-gray-100 p-4
+           cursor-pointer transition-all duration-200
+           hover:border-blue-300 hover:shadow-md;
+  }
+
+  .page-card.selected {
+    @apply border-blue-500 bg-blue-50 shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold
+           py-3 px-6 rounded-xl transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 font-semibold
+           py-3 px-6 rounded-xl border border-gray-200
+           transition-colors duration-200;
+  }
+}
